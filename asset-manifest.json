@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/au_egovernance/static/css/main.1ce70aff.css",
+    "main.js": "/au_egovernance/static/js/main.31098b28.js",
+    "index.html": "/au_egovernance/index.html",
+    "main.1ce70aff.css.map": "/au_egovernance/static/css/main.1ce70aff.css.map",
+    "main.31098b28.js.map": "/au_egovernance/static/js/main.31098b28.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1ce70aff.css",
+    "static/js/main.31098b28.js"
+  ]
+}
