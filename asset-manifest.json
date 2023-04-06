@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/au_egovernance/static/css/main.1ce70aff.css",
-    "main.js": "/au_egovernance/static/js/main.71df9089.js",
+    "main.js": "/au_egovernance/static/js/main.a10bb748.js",
     "index.html": "/au_egovernance/index.html",
     "main.1ce70aff.css.map": "/au_egovernance/static/css/main.1ce70aff.css.map",
-    "main.71df9089.js.map": "/au_egovernance/static/js/main.71df9089.js.map"
+    "main.a10bb748.js.map": "/au_egovernance/static/js/main.a10bb748.js.map"
   },
   "entrypoints": [
     "static/css/main.1ce70aff.css",
-    "static/js/main.71df9089.js"
+    "static/js/main.a10bb748.js"
   ]
 }
