@@ -55,15 +55,17 @@ const LoginPage = () => {
   return (
     <div>
       <Header></Header>
+      <Box
+        sx={{
+          height: "clamp(60px, 15vh, 100px)",
+        }}
+      />
       <Container maxWidth={isNonMobileScreens ? "sm" : "xs"}>
-        <Paper
-          elevation={2}
-          sx={{ marginTop: "calc((35vh - 80px)/2)", overflow: "hidden" }}
-        >
+        <Paper elevation={2} sx={{ overflow: "hidden" }}>
           <Box
             sx={{
               width: "100%",
-              height: "clamp(300px, 65vh, 400px)",
+              height: "clamp(350px, 65vh, 400px)",
               display: "inline-flex",
               justifyContent: "center",
             }}
@@ -235,6 +237,11 @@ const LoginPage = () => {
           </Box>
         </Paper>
       </Container>
+      <Box
+        sx={{
+          height: "clamp(60px, 15vh, 100px)",
+        }}
+      />
       <Footer></Footer>
     </div>
   );

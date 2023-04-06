@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import { themeSettings } from "./theme";
+import Academica from "template/Academica";
 
 function App() {
   const mode = useSelector((state) => state.mode);
@@ -18,7 +19,7 @@ function App() {
           <CssBaseline />
           <Routes>
             <Route path="/" element={<LoginPage />} />
-            <Route path="/home" element={<HomePage />} />
+            <Route path="/home" element={<Academica />} />
             <Route path="/profile/:userId" element={<ProfilePage />} />
           </Routes>
         </ThemeProvider>

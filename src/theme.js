@@ -15,18 +15,18 @@ export const colorTokens = {
     900: "#0A0A0A",
     1000: "#000000",
   },
-  // primary: {
-  //   50: "#ffe5e5",
-  //   100: "#ffb3b3",
-  //   200: "#ff8080",
-  //   300: "#ff4d4d",
-  //   400: "#ff1a1a",
-  //   500: "#e60000",
-  //   600: "#b30000",
-  //   700: "#800000",
-  //   800: "#4d0000",
-  //   900: "#1a0000",
-  // },
+  primaryVib: {
+    50: "#ffe5e5",
+    100: "#ffb3b3",
+    200: "#ff8080",
+    300: "#ff4d4d",
+    400: "#ff1a1a",
+    500: "#e60000",
+    600: "#b30000",
+    700: "#800000",
+    800: "#4d0000",
+    900: "#1a0000",
+  },
   primary: {
     50: "#f7eded",
     100: "#e8c9c9",
@@ -52,6 +52,7 @@ export const themeSettings = (mode) => {
             primary: {
               dark: colorTokens.primary[200],
               main: colorTokens.primary[500],
+              medium: colorTokens.primary[600],
               light: colorTokens.primary[800],
             },
             neutral: {
@@ -60,6 +61,7 @@ export const themeSettings = (mode) => {
               mediumMain: colorTokens.grey[300],
               medium: colorTokens.grey[400],
               light: colorTokens.grey[700],
+              verylight: colorTokens.grey[800],
             },
             background: {
               default: colorTokens.grey[900],
@@ -71,6 +73,7 @@ export const themeSettings = (mode) => {
             primary: {
               dark: colorTokens.primary[700],
               main: colorTokens.primary[500],
+              medium: colorTokens.primary[200],
               light: colorTokens.primary[50],
             },
             neutral: {
@@ -79,6 +82,7 @@ export const themeSettings = (mode) => {
               mediumMain: colorTokens.grey[400],
               medium: colorTokens.grey[300],
               light: colorTokens.grey[50],
+              verylight: colorTokens.grey[10],
             },
             background: {
               default: colorTokens.grey[10],

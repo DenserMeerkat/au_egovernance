@@ -31,7 +31,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const isNonMobileScreens = useMediaQuery("(min-width: 500px)");
+  const isNonMobileScreens = useMediaQuery("(min-width: 600px)");
   const theme = useTheme();
   const primary = theme.palette.primary.main;
   const dark = theme.palette.neutral.dark;
@@ -51,6 +51,13 @@ const Header = () => {
             borderRadius: "8px",
           }}
         >
+          {" "}
+          <img
+            style={{ height: "40px", width: "40px" }}
+            alt="Centre for e-Governance logo"
+            src={process.env.PUBLIC_URL + "/assets/anna_logo.png"}
+          />
+          <Box sx={{ width: "12px" }}></Box>
           {isNonMobileScreens ? (
             <Typography fontWeight="500" variant="h3">
               {"Anna University"}
@@ -65,7 +72,12 @@ const Header = () => {
             {"|"}
           </Typography>
           <Box sx={{ width: "6px" }}></Box>
-          <Typography color={primary} fontWeight="500" variant="h4">
+          <Typography
+            color={primary}
+            fontWeight="500"
+            variant="h4"
+            letterSpacing={1}
+          >
             {"Academica"}
           </Typography>
         </Box>
@@ -102,7 +114,10 @@ const Footer = () => {
         boxShadow: 3,
       }}
     >
-      <Box sx={{ height: "100%", display: "flex", alignItems: "center" }}>
+      <Box
+        elevation={6}
+        sx={{ height: "100%", display: "flex", alignItems: "center" }}
+      >
         {isNonMobileScreens ? (
           <Typography variant="body2" letterSpacing={2}>
             <>
