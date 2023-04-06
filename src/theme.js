@@ -15,18 +15,18 @@ export const colorTokens = {
     900: "#0A0A0A",
     1000: "#000000",
   },
-  primaryVib: {
-    50: "#ffe5e5",
-    100: "#ffb3b3",
-    200: "#ff8080",
-    300: "#ff4d4d",
-    400: "#ff1a1a",
-    500: "#e60000",
-    600: "#b30000",
-    700: "#800000",
-    800: "#4d0000",
-    900: "#1a0000",
-  },
+  // primaryVib: {
+  //   50: "#ffe5e5",
+  //   100: "#ffb3b3",
+  //   200: "#ff8080",
+  //   300: "#ff4d4d",
+  //   400: "#ff1a1a",
+  //   500: "#e60000",
+  //   600: "#b30000",
+  //   700: "#800000",
+  //   800: "#4d0000",
+  //   900: "#1a0000",
+  // },
   primary: {
     50: "#f7eded",
     100: "#e8c9c9",
@@ -73,7 +73,7 @@ export const themeSettings = (mode) => {
             primary: {
               dark: colorTokens.primary[700],
               main: colorTokens.primary[500],
-              medium: colorTokens.primary[200],
+              medium: colorTokens.primary[400],
               light: colorTokens.primary[50],
             },
             neutral: {
@@ -89,6 +89,10 @@ export const themeSettings = (mode) => {
               alt: colorTokens.grey[0],
             },
           }),
+    },
+    button: {
+      backgroundColor: colorTokens.primary,
+      touchRipple: colorTokens.grey,
     },
     typography: {
       fontFamily: ["Rubik", "sans-serif"].join(","),

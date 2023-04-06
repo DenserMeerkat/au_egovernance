@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState, useEffect } from "react";
 import { Stack, Typography, useTheme } from "@mui/material";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
@@ -22,16 +23,17 @@ import {
   ExpandCircleDown,
   Layers,
 } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
-const categories = [
-  { id: "Dashboard", icon: <HomeIcon /> },
-  { id: "Profile", icon: <AccountCircle />, active: true },
-  { id: "360°", icon: <Layers /> },
-  { id: "Professional", icon: <Work /> },
-  { id: "Recognition", icon: <PublicIcon /> },
-  { id: "Research", icon: <Biotech /> },
-  { id: "Personnel", icon: <Badge /> },
-  { id: "Others", icon: <ExpandCircleDown /> },
+var categories = [
+  { id: "Dashboard", icon: <HomeIcon />, navig: "/home" },
+  { id: "Profile", icon: <AccountCircle />, navig: "/profile" },
+  { id: "360°", icon: <Layers />, navig: "/360" },
+  { id: "Professional", icon: <Work />, navig: "/professional" },
+  { id: "Recognition", icon: <PublicIcon />, navig: "/recognition" },
+  { id: "Research", icon: <Biotech />, navig: "/research" },
+  { id: "Personnel", icon: <Badge />, navig: "/personnel" },
+  { id: "Others", icon: <ExpandCircleDown />, navig: "/others" },
 ];
 
 const item = {
@@ -51,13 +53,12 @@ const itemCategory = {
 
 export default function Navigator(props) {
   const theme = useTheme();
-
   const primaryDark = theme.palette.primary.main;
   const neutralDark = theme.palette.neutral.dark;
   const neutralLight = theme.palette.neutral.light;
   const neutralMain = theme.palette.neutral.main;
   const { ...other } = props;
-
+  const activePage = props.activepage;
   return (
     <Drawer variant="permanent" {...other}>
       <List disablePadding>
@@ -97,18 +98,16 @@ export default function Navigator(props) {
               display: "flex",
               alignItems: "center",
             }}
-          >
-            {/* <Menu />
-            <Box width={16} />
-            <Typography variant="h3" fontWeight={500}>
-              Menu
-            </Typography> */}
-          </Box>
+          ></Box>
         </ListItem>
         <Divider color={neutralLight}></Divider>
-        {categories.map(({ id: childId, icon, active }) => (
-          <ListItem disablePadding key={childId}>
-            <ListItemButton selected={active} sx={{ ...itemCategory }}>
+        {/* Nav Menu Items */}
+        {categories.map(({ id: childId, icon, navig }) => (
+          <ListItem component={Link} to={navig} disablePadding key={childId}>
+            <ListItemButton
+              selected={childId == activePage}
+              sx={{ ...itemCategory }}
+            >
               <ListItemIcon sx={{ color: neutralDark }}>{icon}</ListItemIcon>
               <ListItemText sx={{ color: neutralDark }}>{childId}</ListItemText>
             </ListItemButton>

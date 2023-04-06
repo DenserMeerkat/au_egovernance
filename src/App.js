@@ -19,8 +19,24 @@ function App() {
           <CssBaseline />
           <Routes>
             <Route path="/" element={<LoginPage />} />
-            <Route path="/home" element={<Academica />} />
-            <Route path="/profile/:userId" element={<ProfilePage />} />
+            <Route path="/home" element={<Academica page="Dashboard" />} />
+            <Route
+              path="/profile"
+              element={<Academica page="Profile" />}
+            />{" "}
+            <Route path="/360" element={<Academica page="360°" />} />
+            <Route
+              path="/professional"
+              element={<Academica page="Professional" />}
+            />
+            <Route
+              path="/recognition"
+              element={<Academica page="Recognition" />}
+            />
+            <Route path="/research" element={<Academica page="Research" />} />
+            <Route path="/personnel" element={<Academica page="Personnel" />} />
+            <Route path="/others" element={<Academica page="Others" />} />
+            {/* <Route path="/profile/:userId" element={<ProfilePage />} /> */}
           </Routes>
         </ThemeProvider>
       </BrowserRouter>

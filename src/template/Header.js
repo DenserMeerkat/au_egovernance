@@ -24,7 +24,8 @@ function Header(props) {
   const { onDrawerToggle } = props;
   const theme = useTheme();
   const dispatch = useDispatch();
-  const primaryMain = colorTokens.primary[500];
+  const primaryMain = theme.palette.primary.medium;
+  const activePage = props.activepage;
   return (
     <React.Fragment>
       <AppBar
@@ -94,7 +95,7 @@ function Header(props) {
           <Grid container alignItems="center" spacing={1}>
             <Grid item xs>
               <Typography color="inherit" variant="h2" component="h1">
-                Authentication
+                {activePage}
               </Typography>
             </Grid>
             {/* <Grid item>

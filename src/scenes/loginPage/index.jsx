@@ -47,6 +47,10 @@ const useStyles = makeStyles({
 const LoginPage = () => {
   const isNonMobileScreens = useMediaQuery("(min-width: 700px)");
 
+  const navigate = useNavigate();
+  function handleClick() {
+    navigate("/home");
+  }
   const classes = useStyles();
   const theme = useTheme();
   const primary = theme.palette.primary.main;
@@ -214,7 +218,12 @@ const LoginPage = () => {
                 </FormControl>
                 <Box height={"16px"}></Box>
                 <FormControl variant="standard">
-                  <Button fullWidth type="submit" variant="contained">
+                  <Button
+                    fullWidth
+                    type="submit"
+                    variant="contained"
+                    onClick={handleClick}
+                  >
                     Login
                   </Button>
                 </FormControl>

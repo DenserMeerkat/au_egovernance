@@ -23,47 +23,15 @@ function Copyright() {
   );
 }
 
-// let theme = createTheme({
-//   palette: {
-//     primary: {
-//       light: "#ff8080",
-//       main: "#bb5e5e",
-//       dark: "#7e3535",
-//     },
-//   },
-//   typography: {
-//     h5: {
-//       fontWeight: 500,
-//       fontSize: 26,
-//       letterSpacing: 0.5,
-//     },
-//   },
-//   shape: {
-//     borderRadius: 8,
-//   },
-//   components: {
-//     MuiTab: {
-//       defaultProps: {
-//         disableRipple: true,
-//       },
-//     },
-//   },
-//   mixins: {
-//     toolbar: {
-//       minHeight: 48,
-//     },
-//   },
-// });
-
 const drawerWidth = 256;
 
-export default function Academica() {
+export default function Academica(props) {
   let theme = useTheme();
   const primaryMedium = theme.palette.primary.medium;
   const neutralDark = theme.palette.neutral.dark;
   const neutralLight = theme.palette.neutral.light;
   const neutralMain = theme.palette.neutral.verylight;
-
+  const activePage = props.page;
   theme = {
     ...theme,
     components: {
@@ -193,7 +161,12 @@ export default function Academica() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={{ display: "flex", minHeight: "100vh" }}>
+      <Box
+        sx={{
+          display: "flex",
+          minHeight: "100vh",
+        }}
+      >
         <CssBaseline />
         <Box
           component="nav"
@@ -207,21 +180,26 @@ export default function Academica() {
               variant="temporary"
               open={mobileOpen}
               onClose={handleDrawerToggle}
+              activepage={activePage}
             />
           )}
 
           <Navigator
             PaperProps={{ style: { width: drawerWidth } }}
             sx={{ display: { md: "block", xs: "none" } }}
+            activepage={activePage}
           />
         </Box>
-        <Box sx={{ flex: 1, display: "flex", flexDirection: "column" }}>
-          <Header onDrawerToggle={handleDrawerToggle} />
-          <Box
-            component="main"
-            sx={{ flex: 1, py: 6, px: 4, bgcolor: "#eaeff1" }}
-          >
-            <Content />
+        <Box
+          sx={{
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <Header onDrawerToggle={handleDrawerToggle} activepage={activePage} />
+          <Box component="main" sx={{ flex: 1, py: 6, px: 4 }}>
+            <Content activepage={activePage} />
           </Box>
           {/* <Box component="footer" sx={{ p: 2, bgcolor: "#eaeff1" }}>
             <Copyright />
